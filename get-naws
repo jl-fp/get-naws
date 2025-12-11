@@ -11,7 +11,7 @@ NAWS_REGISTRY="https://artifactory.flexport.io/artifactory/api/npm/ffa-infra-npm
 NAWS_PACKAGE_NAME="@ffa/naws-cli"
 NAWS_WRAPPER="/usr/local/bin/naws"
 
-NODE_DOWNLOAD_URL="https://nodejs.org/dist/$NODE_VERSION/node-$NODE_VERSION-$PLATFORM-$ARCH.tar.gz"
+
 TEMP_FILE="$INSTALL_DIR/node-$NODE_VERSION.tar.gz"
 
 
@@ -47,7 +47,7 @@ if [ ! -f "$NODE_BIN" ]; then
       exit 1
       ;;
   esac
-  
+  NODE_DOWNLOAD_URL="https://nodejs.org/dist/$NODE_VERSION/node-$NODE_VERSION-$PLATFORM-$ARCH.tar.gz"
   echo "Downloading from $NODE_DOWNLOAD_URL"
   curl -L "$NODE_DOWNLOAD_URL" -o "$TEMP_FILE"
   
